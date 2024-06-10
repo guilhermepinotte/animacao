@@ -6,6 +6,7 @@
     class="formulario ff-prompt"
     [formGroup]="formulario"
     *ngIf="formAberto"
+    [@shownState]
   >
     <label for="descricao">Descrição da tarefa</label>
     <input
@@ -92,6 +93,7 @@
                 : 'icone-unchecked'
             "
             (click)="finalizarTarefa(tarefa.id)"
+            [@checkButton]="tarefa.statusFinalizado ? 'checked' : 'unchecked'"
           ></button>
         </p>
       </div>
